@@ -20,6 +20,6 @@ Welcome to my portfolio website repository! This site showcases my work and skil
 Feel free to navigate through the site and get a glimpse of my creative and technical abilities!
 
 ## Contact
-For any questions or collaborations, feel free to contact me at [gininaba@gmail.com](mailto: gininaba@gmail.com).
+For any questions or collaborations, feel free to contact me at [gininaba@gmail.com](mailto:your.email@example.com).
 
 Happy exploring!
