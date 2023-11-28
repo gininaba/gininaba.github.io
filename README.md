@@ -3,7 +3,7 @@
 Welcome to my portfolio website, where creativity meets technical expertise. I'm Gin, a passionate Graphic Designer and IT/Android Expert, currently honing my skills as a trainee at Anjo World Theme Park.
 
 ## Overview
-Explore a curated collection of my latest projects that showcase a fusion of design aesthetics and technological innovation. From captivating graphic designs to cutting-edge Android applications, my portfolio reflects my dedication to both artistic expression and technical proficiency.
+Explore a curated collection of my latest projects that showcase a fusion of design aesthetics and technological innovation. From captivating graphic designs, my portfolio reflects my dedication to both artistic expression and technical proficiency.
 
 ## Key Features
 - **Projects Showcase:** Immerse yourself in a visual journey through my diverse range of projects.
