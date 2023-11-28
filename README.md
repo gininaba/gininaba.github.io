@@ -1,4 +1,4 @@
-# Portfolio Website
+# Gin's Portfolio Website
 
 Welcome to my portfolio website repository! This site showcases my work and skills as a Graphic Designer and IT/Android Expert.
 
