@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gin's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">Gin's Portfolio</h1>
+                    <p class="text-sm md:text-base">Graphic Designer at Anjo World Theme Park</p>
+                </div>
+                
+                <!-- Navigation Bar -->
+                <nav class="hidden md:flex">
+                    <ul class="flex space-x-4">
+                        <li>
+                            <a href="#home" class="hover:text-gray-300">Home</a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="hover:text-gray-300">Projects</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="hover:text-gray-300">About</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="hover:text-gray-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+   <!-- About Section -->
+    <section id="about" class="container mx-auto my-8 p-8 bg-white shadow-md rounded-md flex items-center">
+        <!-- Profile Picture -->
+        <img src="https://media.licdn.com/dms/image/D4D03AQEBCPDSUkR98Q/profile-displayphoto-shrink_200_200/0/1678243790211?e=1706745600&v=beta&t=XRxmc1ocllhANdEJjSti37hGA8ntab_Ng7_qcSHLhmk" alt="Gin's Profile" class="rounded-full mr-8">
+
+        <!-- About Me Content -->
+        <div class="flex-1">
+            <div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-gray-700">
+                    Hi, I'm Gin! A passionate graphic designer with one year of experience at Anjo World Theme Park.
+                    I love blending creativity with technology to create visually appealing designs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Text Section -->
+    <section id="animatedText" class="container mx-auto my-8 p-8 bg-gray-200 shadow-md rounded-md">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Skills</h2>
+        <div class="flex-1">
+            <p id="skillsText" class="text-gray-700 text-4xl font-bold">Graphic Designer</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto my-8 p-8 bg-white shadow-md rounded-md">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <a href="#project1" class="p-4 border rounded-md hover:shadow-lg transition-transform transform hover:scale-105">
+                <img src="https://via.placeholder.com/300" alt="Project 1" class="mb-2 rounded-md">
+                <h3 class="text-xl font-bold mb-2">Project 1</h3>
+                <p class="text-gray-700">
+                    Description of Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="#project2" class="p-4 border rounded-md hover:shadow-lg transition-transform transform hover:scale-105">
+                <img src="https://via.placeholder.com/300" alt="Project 2" class="mb-2 rounded-md">
+                <h3 class="text-xl font-bold mb-2">Project 2</h3>
+                <p class="text-gray-700">
+                    Description of Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+            </a>
+
+            <!-- Project 3 -->
+            <a href="#project3" class="p-4 border rounded-md hover:shadow-lg transition-transform transform hover:scale-105">
+                <img src="https://via.placeholder.com/300" alt="Project 3" class="mb-2 rounded-md">
+                <h3 class="text-xl font-bold mb-2">Project 3</h3>
+                <p class="text-gray-700">
+                    Description of Project 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+            </a>
+
+            <!-- Add more projects as needed -->
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto my-8 p-8 bg-white shadow-md rounded-md">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Contact</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Contact Detail 1: Email -->
+            <a href="mailto:gininaba@gmail.com" class="contact-card p-4 border rounded-md hover:shadow-lg transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold mb-2">Email</h3>
+                <p class="text-gray-700">gininaba@gmail.com</p>
+            </a>
+
+            <!-- Contact Detail 2: Phone Number -->
+            <a href="tel:+639666623019" class="contact-card p-4 border rounded-md hover:shadow-lg transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold mb-2">Phone Number</h3>
+                <p class="text-gray-700">+639666623019</p>
+            </a>
+
+            <!-- Add more contact details as needed -->
+
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <section class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+
+            <!-- Left side of the footer - add your content here -->
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-lg font-bold mb-2">Connect with Me:</h3>
+
+                <!-- Social Media Icons -->
+                <div class="flex space-x-4">
+                    <!-- Replace "#" with your actual social media links -->
+                    <a href="https://www.facebook.com/ginsan.inaba" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/inaba_gin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <!-- Add LinkedIn icon -->
+                    <a href="https://www.linkedin.com/in/gin-inaba" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- Add more social media icons as needed -->
+                </div>
+            </div>
+
+            <!-- Right side of the footer - add your content here -->
+            <div>
+                <p class="text-sm">&copy; 2023 Gin's Portfolio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-md hidden">
+        Scroll to Top
+    </button>
+
+<script src="app.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
