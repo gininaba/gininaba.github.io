@@ -1,5 +1,44 @@
 // script.js
 
+// List of roles to cycle through
+const roles = ["Graphic Designer", "IT Expert", "Android Expert"];
+let currentIndex = 0;
+
+// Function to update the role text with typewriter effect
+function updateRole() {
+    const roleTextElement = document.getElementById("roleText");
+    const currentRole = roles[currentIndex];
+    let charIndex = 0;
+
+    function typeWriter() {
+        if (charIndex < currentRole.length) {
+            roleTextElement.textContent += currentRole.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 100);
+        } else {
+            // After typing the role, wait for 1 second and then start erasing
+            setTimeout(erase, 1000);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            roleTextElement.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 50);
+        } else {
+            // After erasing, move to the next role and start typing again
+            currentIndex = (currentIndex + 1) % roles.length;
+            setTimeout(updateRole, 500);
+        }
+    }
+
+    // Start the typewriter effect
+    typeWriter();
+}
+
+// Start the role update when the page loads
+document.addEventListener("DOMContentLoaded", updateRole);
 // Get the button
 var scrollToTopButton = document.getElementById("scrollToTop");
 
@@ -16,33 +55,5 @@ window.onscroll = function () {
 scrollToTopButton.addEventListener("click", function () {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Array of skills to cycle through
-    const skills = ["Graphic Designer", "IT Expert", "Android Expert"];
-
-    // Get the element to update
-    const skillsText = document.getElementById("skillsText");
-
-    // Function to update skills text with animation
-    function updateSkills() {
-        let currentIndex = 0;
-
-        setInterval(function () {
-            const currentSkill = skills[currentIndex];
-            skillsText.textContent = currentSkill;
-
-            // Generate a random RGB color
-            const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
-
-            // Apply the color to the text
-            skillsText.style.color = randomColor;
-
-            currentIndex = (currentIndex + 1) % skills.length;
-        }, 1000); // Change the interval (in milliseconds) as needed
-    }
-
-    // Call the function to start the animation
-    updateSkills();
+    
 });
