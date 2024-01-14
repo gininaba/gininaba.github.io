@@ -1,12 +1,18 @@
 // script.js
 
-const roles = ["A Graphic Designer", "An IT Expert", "An Android Expert"];
+const roles = ["Graphic Designer", "Android Expert", "IT Expert"];
 let currentIndex = 0;
 
 function updateRole() {
     const roleTextElement = document.getElementById("roleText");
+    const fixedTextElement = document.getElementById("fixedText");
     const currentRole = roles[currentIndex];
     let charIndex = 0;
+
+    function determineArticle(role) {
+        // Function to determine whether to use "A" or "An" based on the first letter of the role
+        return role && /^[aeiou]/i.test(role) ? "An" : "A";
+    }
 
     function typeWriter() {
         if (charIndex < currentRole.length) {
@@ -25,14 +31,21 @@ function updateRole() {
             setTimeout(erase, 50);
         } else {
             currentIndex = (currentIndex + 1) % roles.length;
+            const article = determineArticle(roles[currentIndex]);
+            fixedTextElement.textContent = `${article} `;
             setTimeout(updateRole, 500);
         }
     }
+
+    // Initialize the fixed text with the first role
+    const initialArticle = determineArticle(roles[currentIndex]);
+    fixedTextElement.textContent = `${initialArticle} `;
 
     typeWriter();
 }
 
 document.addEventListener("DOMContentLoaded", updateRole);
+
 
 const scrollToTopButton = document.getElementById("scrollToTop");
 const SCROLL_THRESHOLD = 20;
