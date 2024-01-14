@@ -1,18 +1,14 @@
 // script.js
 
-const roles = ["Graphic Designer", "Android Expert", "IT Expert"];
+// List of roles to cycle through
+const roles = ["Graphic Designer", "IT Expert", "Android Expert"];
 let currentIndex = 0;
 
+// Function to update the role text with typewriter effect
 function updateRole() {
     const roleTextElement = document.getElementById("roleText");
-    const articleTextElement = document.getElementById("articleText");
     const currentRole = roles[currentIndex];
     let charIndex = 0;
-
-    function determineArticle(role) {
-        // Function to determine whether to use "A" or "An" based on the first letter of the role
-        return role && /^[aeiou]/i.test(role) ? "An" : "A";
-    }
 
     function typeWriter() {
         if (charIndex < currentRole.length) {
@@ -20,6 +16,7 @@ function updateRole() {
             charIndex++;
             setTimeout(typeWriter, 100);
         } else {
+            // After typing the role, wait for 1 second and then start erasing
             setTimeout(erase, 1000);
         }
     }
@@ -30,31 +27,33 @@ function updateRole() {
             charIndex--;
             setTimeout(erase, 50);
         } else {
+            // After erasing, move to the next role and start typing again
             currentIndex = (currentIndex + 1) % roles.length;
-            const article = determineArticle(roles[currentIndex]);
-            articleTextElement.textContent = `${article} `;
             setTimeout(updateRole, 500);
         }
     }
 
-    // Initialize the fixed article with the first role
-    const initialArticle = determineArticle(roles[currentIndex]);
-    articleTextElement.textContent = `${initialArticle} `;
-
+    // Start the typewriter effect
     typeWriter();
 }
 
+// Start the role update when the page loads
 document.addEventListener("DOMContentLoaded", updateRole);
+// Get the button
+var scrollToTopButton = document.getElementById("scrollToTop");
 
-const scrollToTopButton = document.getElementById("scrollToTop");
-const SCROLL_THRESHOLD = 20;
-const SCROLL_TOP_DURATION = 500;
-
+// Show/hide the button based on scroll position
 window.onscroll = function () {
-    scrollToTopButton.style.display = (document.body.scrollTop > SCROLL_THRESHOLD || document.documentElement.scrollTop > SCROLL_THRESHOLD) ? "block" : "none";
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
 };
 
+// Scroll to the top when the button is clicked
 scrollToTopButton.addEventListener("click", function () {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    
 });
