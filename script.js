@@ -1,7 +1,7 @@
 // script.js
 
 // List of roles to cycle through
-const roles = ["Graphic Designer", "IT Expert", "Android Expert"];
+const roles = ["A Graphic Designer", "An IT Expert", "An Android Expert"];
 let currentIndex = 0;
 
 // Function to update the role text with typewriter effect
