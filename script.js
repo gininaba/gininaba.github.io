@@ -1,10 +1,8 @@
 // script.js
 
-// List of roles to cycle through
 const roles = ["A Graphic Designer", "An IT Expert", "An Android Expert"];
 let currentIndex = 0;
 
-// Function to update the role text with typewriter effect
 function updateRole() {
     const roleTextElement = document.getElementById("roleText");
     const currentRole = roles[currentIndex];
@@ -16,7 +14,6 @@ function updateRole() {
             charIndex++;
             setTimeout(typeWriter, 100);
         } else {
-            // After typing the role, wait for 1 second and then start erasing
             setTimeout(erase, 1000);
         }
     }
@@ -27,33 +24,25 @@ function updateRole() {
             charIndex--;
             setTimeout(erase, 50);
         } else {
-            // After erasing, move to the next role and start typing again
             currentIndex = (currentIndex + 1) % roles.length;
             setTimeout(updateRole, 500);
         }
     }
 
-    // Start the typewriter effect
     typeWriter();
 }
 
-// Start the role update when the page loads
 document.addEventListener("DOMContentLoaded", updateRole);
-// Get the button
-var scrollToTopButton = document.getElementById("scrollToTop");
 
-// Show/hide the button based on scroll position
+const scrollToTopButton = document.getElementById("scrollToTop");
+const SCROLL_THRESHOLD = 20;
+const SCROLL_TOP_DURATION = 500;
+
 window.onscroll = function () {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopButton.style.display = "block";
-    } else {
-        scrollToTopButton.style.display = "none";
-    }
+    scrollToTopButton.style.display = (document.body.scrollTop > SCROLL_THRESHOLD || document.documentElement.scrollTop > SCROLL_THRESHOLD) ? "block" : "none";
 };
 
-// Scroll to the top when the button is clicked
 scrollToTopButton.addEventListener("click", function () {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-    
 });
