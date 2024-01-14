@@ -5,7 +5,7 @@ let currentIndex = 0;
 
 function updateRole() {
     const roleTextElement = document.getElementById("roleText");
-    const fixedTextElement = document.getElementById("fixedText");
+    const articleTextElement = document.getElementById("articleText");
     const currentRole = roles[currentIndex];
     let charIndex = 0;
 
@@ -32,20 +32,19 @@ function updateRole() {
         } else {
             currentIndex = (currentIndex + 1) % roles.length;
             const article = determineArticle(roles[currentIndex]);
-            fixedTextElement.textContent = `${article} `;
+            articleTextElement.textContent = `${article} `;
             setTimeout(updateRole, 500);
         }
     }
 
-    // Initialize the fixed text with the first role
+    // Initialize the fixed article with the first role
     const initialArticle = determineArticle(roles[currentIndex]);
-    fixedTextElement.textContent = `${initialArticle} `;
+    articleTextElement.textContent = `${initialArticle} `;
 
     typeWriter();
 }
 
 document.addEventListener("DOMContentLoaded", updateRole);
-
 
 const scrollToTopButton = document.getElementById("scrollToTop");
 const SCROLL_THRESHOLD = 20;
